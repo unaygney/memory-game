@@ -4,7 +4,6 @@
 
 @layer base {
   .heading-l {
-    color: #152938;
     font-family: Atkinson Hyperlegible;
     font-size: 48px;
     font-style: normal;
@@ -13,7 +12,6 @@
   }
 
   .heading-m {
-    color: #152938;
     font-family: Atkinson Hyperlegible;
     font-size: 32px;
     font-style: normal;
@@ -22,7 +20,6 @@
   }
 
   .heading.s {
-    color: #152938;
     font-family: Atkinson Hyperlegible;
     font-size: 20px;
     font-style: normal;
