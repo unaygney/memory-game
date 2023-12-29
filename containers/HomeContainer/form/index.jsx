@@ -24,7 +24,7 @@ function Form() {
       onSubmit={handleSubmit(onSubmit)}
     >
       {BUTTONS.map((button) => (
-        <div key={button.id} className="flex flex-col items-start">
+        <div key={button.id} className="flex flex-col gap-4 items-start">
           <h3 className="text-[15px] font-bold leading-normal text-[#7191a5]">
             {button.title}
           </h3>
