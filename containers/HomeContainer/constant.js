@@ -2,6 +2,7 @@ export const BUTTONS = [
   {
     id: 0,
     title: "Select Theme",
+    value: "selectTheme",
     buttons: [
       {
         id: 0,
@@ -16,6 +17,7 @@ export const BUTTONS = [
   {
     id: 1,
     title: "Numbers of Players",
+    value: "numbersOfPlayers",
     buttons: [
       {
         id: 0,
@@ -38,6 +40,7 @@ export const BUTTONS = [
   {
     id: 2,
     title: "Grid Size",
+    value: "gridSize",
     buttons: [
       {
         id: 0,
