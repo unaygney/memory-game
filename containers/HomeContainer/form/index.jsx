@@ -42,7 +42,7 @@ function Form() {
                   defaultChecked={b.id === 0}
                 />
                 <div
-                  className={`w-full text-[16px]  md:text-[26px] rounded-[26px] h-10 text-[#fcfcfc] text-base font-bold leading-normal inline-flex justify-center items-center p-2 cursor-pointer bg-[#bcced9] hover:bg-[#6395b8] peer-checked:bg-[#304859] `}
+                  className={`w-full text-[16px]  md:text-[26px] rounded-[26px] h-10 text-[#fcfcfc] text-base font-bold leading-normal inline-flex justify-center items-center p-2 cursor-pointer bg-[#bcced9] md:hover:bg-[#6395b8] peer-checked:bg-[#304859] `}
                 >
                   {b.buttonName}
                 </div>
