@@ -6,19 +6,26 @@ function GameBoard({ GRID_SIZE }) {
   const [board, setBoard] = useState(generateBoard(SIZE));
 
   return (
-    <section className="w-full">
-      <div className="flex gap-3 ">
+    <section className={`w-full flex justify-center`}>
+      <div
+        className={`flex  w-full  ${
+          SIZE === 6 ? "md:w-[572px] " : "md:w-[532px]"
+        } ${SIZE == 6 ? "gap-2" : "gap-3"}  `}
+      >
         {board.map((LINE, idx) => (
-          <div className="w-full flex flex-col gap-2" key={idx}>
+          <div
+            className={`w-full flex flex-col ${SIZE == 6 ? "gap-2" : "gap-3"} `}
+            key={idx}
+          >
             {LINE.map((CELL, i) => (
-              <div
-                className={`${
-                  SIZE === 6 ? "w-[46px] h-[46px]" : "w-[72px] h-[72px]"
-                } inline-flex items-center justify-center rounded-full bg-[#BCCED9]`}
+              <button
+                className={` inline-flex ${
+                  SIZE === 6 ? "h-[46px] md:h-[82px]" : "h-[72px] md:h-[118px]"
+                }  items-center justify-center rounded-full bg-[#BCCED9]`}
                 key={i}
               >
                 <span className="text-[#fcfcfc]  heading-l">1</span>
-              </div>
+              </button>
             ))}
           </div>
         ))}
