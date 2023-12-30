@@ -3,9 +3,11 @@ import { createContext, useState, useContext } from "react";
 const GameContext = createContext();
 
 export default function GameContainerProvider({ children }) {
-  const [isOpen, setOpen] = useState(false);
+  const [players, setPlayers] = useState("");
   return (
-    <GameContext.Provider value={{ isOpen }}>{children}</GameContext.Provider>
+    <GameContext.Provider value={{ players, setPlayers }}>
+      {children}
+    </GameContext.Provider>
   );
 }
 
