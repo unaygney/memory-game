@@ -8,7 +8,7 @@ function ScoreBoard({ NUMBERS_OF_PLAYERS }) {
   if (NUMBERS_OF_PLAYERS == 1) {
     return (
       <section className="bg-transparent ">
-        <div className="container mx-auto ">
+        <div className="w-full md:max-w-[540px] md:mx-auto ">
           <div className="flex gap-6 ">
             <div className="flex-1 bg-[#dfe7ec] flex flex-col items-center justify-center py-2 rounded-[5px]">
               <h3 className="text-[#7191a5] font-bold text-[15px] leading-normal">
