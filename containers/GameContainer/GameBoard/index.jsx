@@ -7,8 +7,6 @@ function GameBoard({ GRID_SIZE }) {
   const SIZE = GRID_SIZE === "6x6" ? 6 : 4;
   const [board, setBoard] = useState(generateBoard(SIZE));
 
-  console.log(board);
-
   return (
     <section className={`w-full flex justify-center`}>
       <div

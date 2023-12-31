@@ -9,7 +9,7 @@ function GameContainer({ THEME, NUMBERS_OF_PLAYERS, GRID_SIZE }) {
       <div className="flex flex-col justify-between  w-full h-full">
         <Header />
         <GameBoard GRID_SIZE={GRID_SIZE} />
-        <ScoreBoard />
+        <ScoreBoard NUMBERS_OF_PLAYERS={NUMBERS_OF_PLAYERS} />
       </div>
     </main>
   );
