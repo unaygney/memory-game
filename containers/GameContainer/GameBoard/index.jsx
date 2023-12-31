@@ -1,9 +1,13 @@
 "use client";
+
 import React, { useState } from "react";
 import { generateBoard } from "@/lib/generetaBoard";
+
 function GameBoard({ GRID_SIZE }) {
   const SIZE = GRID_SIZE === "6x6" ? 6 : 4;
   const [board, setBoard] = useState(generateBoard(SIZE));
+
+  console.log(board);
 
   return (
     <section className={`w-full flex justify-center`}>
@@ -24,7 +28,7 @@ function GameBoard({ GRID_SIZE }) {
                 }  items-center justify-center rounded-full bg-[#BCCED9]`}
                 key={i}
               >
-                <span className="text-[#fcfcfc]  heading-l">1</span>
+                <span className="text-[#fcfcfc]  heading-l">{CELL}</span>
               </button>
             ))}
           </div>
