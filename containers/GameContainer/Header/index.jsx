@@ -5,7 +5,7 @@ function Header() {
   const [isActive, setActive] = useState(false);
   return (
     <>
-      <header className=" bg-transparent md:pt-10 lg:pt-[67px]  ">
+      <header className=" bg-transparent md:pt-10 lg:pt-[32px]  ">
         <div className="container mx-auto">
           <div className="flex justify-between">
             <Link
