@@ -7,6 +7,7 @@ function GameBoard({ GRID_SIZE }) {
   const SIZE = GRID_SIZE === "6x6" ? 6 : 4;
   const [board, setBoard] = useState(generateBoard(SIZE));
   const [selectedCells, setSelectedCells] = useState([]);
+
   const handleClick = (rowIdx, cellIdx) => {
     const newSelectedCells = [...selectedCells, { row: rowIdx, cell: cellIdx }];
 
@@ -16,14 +17,13 @@ function GameBoard({ GRID_SIZE }) {
       const [row2, cell2] = [secondCell.row, secondCell.cell];
 
       if (board[row1][cell1] === board[row2][cell2]) {
-        // Eşleşen butonları burada işaretleyebilirsiniz.
+        // Eşleşen butonları burada isaretle
         const updatedBoard = [...board];
         updatedBoard[row1][cell1] = "matched";
         updatedBoard[row2][cell2] = "matched";
         setBoard(updatedBoard);
       } else {
-        // Eşleşmeyen butonları işaretleyebilirsiniz (Örn: Kırmızıya çevirme).
-        // Örneğin, eşleşmeyen butonları bir süre sonra geri çevirebilirsiniz.
+        // Eşleşmeyen butonlar
         setTimeout(() => {
           const updatedBoard = [...board];
           updatedBoard[row1][cell1] = "unmatched";
