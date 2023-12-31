@@ -1,6 +1,6 @@
 "use client";
 import React, { useState } from "react";
-
+import Link from "next/link";
 function Header() {
   const [isActive, setActive] = useState(false);
   return (
@@ -8,9 +8,12 @@ function Header() {
       <header className=" bg-transparent md:pt-10 lg:pt-[67px]  ">
         <div className="container mx-auto">
           <div className="flex justify-between">
-            <h1 className="text-[#152938] text-2xl leading-normal font-bold">
+            <Link
+              href={"/"}
+              className="text-[#152938] text-2xl leading-normal font-bold"
+            >
               memory
-            </h1>
+            </Link>
 
             <div className="flex gap-4">
               <button
