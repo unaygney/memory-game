@@ -53,19 +53,17 @@ function GameBoard({ GRID_SIZE }) {
           }}
         >
           {board.flat().map((CELL, i) => (
-            <div className="relative cursor-pointer">
-              <button
-                className={`rounded-full bg-[#bcced9] text-[#fcfcfc] text-[44px] font-bold leading-normal   ${
-                  SIZE === 4
-                    ? "h-[72px] w-[72px] md:w-[118px] md:h-[118px]"
-                    : "h-[46px] w-[46px] md:h-[82px] md:w-[82px]"
-                }`}
-                key={i}
-              >
-                {CELL}
-              </button>
+            <button
+              className={`rounded-full bg-[#bcced9] text-[#fcfcfc] text-[44px] font-bold leading-normal    relative ${
+                SIZE === 4
+                  ? "h-[72px] w-[72px] md:w-[118px] md:h-[118px]"
+                  : "h-[46px] w-[46px] md:h-[82px] md:w-[82px]"
+              }`}
+              key={i}
+            >
+              {CELL}
               <span className="absolute inset-0 bg-[#304859] rounded-full"></span>
-            </div>
+            </button>
           ))}
         </div>
       </div>
