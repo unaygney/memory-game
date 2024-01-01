@@ -36,37 +36,38 @@ function GameBoard({ GRID_SIZE }) {
       setSelectedCells(newSelectedCells);
     }
   };
+  console.log(board);
 
   return (
-    <section className={`w-full flex justify-center`}>
+    <section className="w-full h-full  flex items-center justify-center">
       <div
-        className={`flex  w-full  ${
-          SIZE === 6 ? "md:w-[572px] " : "md:w-[532px]"
-        } ${SIZE == 6 ? "gap-2" : "gap-3"}  `}
+        className={` w-full h-fit ${
+          SIZE === 4 ? "md:w-[532px]" : "md:w-[572px]"
+        }`}
       >
-        {board.map((LINE, idx) => (
-          <div
-            className={`w-full flex flex-col ${SIZE == 6 ? "gap-2" : "gap-3"} `}
-            key={idx}
-          >
-            {LINE.map((CELL, i) => (
+        <div
+          className={`grid place-items-center grid-cols-${SIZE} gap-2`}
+          style={{
+            gridTemplateRows: `repeat(${SIZE}, 1fr)`,
+            gridTemplateColumns: `repeat(${SIZE}, 1fr)`,
+          }}
+        >
+          {board.flat().map((CELL, i) => (
+            <div className="relative cursor-pointer">
               <button
-                className={` inline-flex ${
-                  SIZE === 6 ? "h-[46px] md:h-[82px]" : "h-[72px] md:h-[118px]"
-                }  items-center justify-center rounded-full   card  `}
+                className={`rounded-full bg-[#bcced9] text-[#fcfcfc] text-[44px] font-bold leading-normal   ${
+                  SIZE === 4
+                    ? "h-[72px] w-[72px] md:w-[118px] md:h-[118px]"
+                    : "h-[46px] w-[46px] md:h-[82px] md:w-[82px]"
+                }`}
                 key={i}
-                onClick={() => handleClick(idx, i)}
               >
-                <div className="card-side front w-full h-full ">
-                  <span className="absolute inset-0 bg-[#304859] rounded-full w-full h-full "></span>
-                </div>
-                <div className="card-side back flex items-center justify-center ">
-                  <span className="text-[#fcfcfc]  heading-l">{CELL}</span>
-                </div>
+                {CELL}
               </button>
-            ))}
-          </div>
-        ))}
+              <span className="absolute inset-0 bg-[#304859] rounded-full"></span>
+            </div>
+          ))}
+        </div>
       </div>
     </section>
   );
