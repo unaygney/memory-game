@@ -1,8 +1,13 @@
 "use client";
 import React, { useState } from "react";
+import { useData } from "../context/useContext";
 import Link from "next/link";
+import { useRouter } from "next/navigation";
 function Header() {
   const [isActive, setActive] = useState(false);
+  const router = useRouter();
+  const { resetTimer } = useData();
+
   return (
     <>
       <header className=" bg-transparent  lg:pt-[32px]   ">
@@ -22,10 +27,16 @@ function Header() {
               >
                 Menu
               </button>
-              <button className="w-[127px] h-10 bg-[#fda214] hover:bg-[#FFB84A]  items-center justify-center text-[#fcfcfc] font-bold leading-normal text-base rounded-[26px] hidden md:inline-flex">
+              <button
+                onClick={resetTimer}
+                className="w-[127px] h-10 bg-[#fda214] hover:bg-[#FFB84A]  items-center justify-center text-[#fcfcfc] font-bold leading-normal text-base rounded-[26px] hidden md:inline-flex"
+              >
                 Restart
               </button>
-              <button className="w-[149px] h-10 bg-[#dfe7ec] hover:bg-[#6395B8] hover:text-[#fcfcfc] items-center justify-center text-[#304859] font-bold leading-normal text-base rounded-[26px] hidden md:inline-flex">
+              <button
+                onClick={() => router.push("/")}
+                className="w-[149px] h-10 bg-[#dfe7ec] hover:bg-[#6395B8] hover:text-[#fcfcfc] items-center justify-center text-[#304859] font-bold leading-normal text-base rounded-[26px] hidden md:inline-flex"
+              >
                 New Game
               </button>
             </div>
@@ -43,7 +54,10 @@ function Header() {
           <button className="w-full h-12 bg-[#fda214] hover:bg-[#FFB84A] text-[#fcfcfc] inline-flex justify-center items-center text-lg font-bold leading-normal rounded-[26px]">
             Restart
           </button>
-          <button className="w-full h-12 bg-[#DFE7EC] hover:bg-[#6395B8] text-[#304859] hover:text-[#FCFCFC] inline-flex justify-center items-center text-lg font-bold leading-normal rounded-[26px]">
+          <button
+            onClick={() => router.push("/")}
+            className="w-full h-12 bg-[#DFE7EC] hover:bg-[#6395B8] text-[#304859] hover:text-[#FCFCFC] inline-flex justify-center items-center text-lg font-bold leading-normal rounded-[26px]"
+          >
             New Game
           </button>
           <button

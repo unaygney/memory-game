@@ -38,6 +38,10 @@ export default function GameContainerProvider({ children }) {
     return () => clearInterval(interval);
   }, []);
 
+  const resetTimer = (time) => {
+    setTime({ sec: 0, min: 0 });
+  };
+
   const value = useMemo(
     () => ({
       board,
@@ -46,6 +50,7 @@ export default function GameContainerProvider({ children }) {
       moves,
       setMoves,
       playersScore,
+      resetTimer,
     }),
     [board, time, moves, playersScore]
   );
