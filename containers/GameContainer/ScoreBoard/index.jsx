@@ -15,7 +15,7 @@ function ScoreBoard({ NUMBERS_OF_PLAYERS }) {
                 Time
               </h3>
               <p className="text-2xl text-[#304859] font-bold leading-normal">
-                {time}
+                {`${time.min}:${time.sec < 10 ? 0 : ""}${time.sec} `}
               </p>
             </div>
             <div className="flex-1 bg-[#dfe7ec] flex flex-col items-center justify-center py-2 rounded-[5px]">

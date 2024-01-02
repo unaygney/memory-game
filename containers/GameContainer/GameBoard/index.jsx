@@ -1,9 +1,10 @@
 "use client";
-
 import React, { useState } from "react";
 import { generateBoard } from "@/lib/generetaBoard";
+import { useData } from "../context/useContext";
 
 function GameBoard({ GRID_SIZE }) {
+  const { setMoves } = useData();
   const SIZE = GRID_SIZE === "6x6" ? 6 : 4;
   const [board, setBoard] = useState(generateBoard(SIZE));
   const [selectedCells, setSelectedCells] = useState([]);
@@ -20,8 +21,10 @@ function GameBoard({ GRID_SIZE }) {
       const [firstCell, secondCell] = newSelectedCells;
       if (firstCell === secondCell) {
         console.log("eslesdi");
+        setMoves((prev) => prev + 1);
       } else {
         console.log("Değerler eşleşmedi");
+        setMoves((prev) => prev + 1);
         setTimeout(() => {
           AllSpan.forEach((span) => (span.style.opacity = "100"));
         }, 400);
